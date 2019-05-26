@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DataStorage.Core.EntityFramework
+namespace DataStorage.Core.EntityFramework.PostgreSQL
 {
     public class DatabaseContext:DbContext
     {
@@ -12,6 +12,11 @@ namespace DataStorage.Core.EntityFramework
         {
             
         }
+
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseNpgsql("Host=127.0.0.1;Database=LawyerProjectDB;Username=cem;Password=18351835");
+        //}
 
         public DbSet<SampleEntity> SampleEntities { get; set; }
     }

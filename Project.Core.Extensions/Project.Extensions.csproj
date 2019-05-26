@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="FluentValidation" Version="8.4.0" />
+    <PackageReference Include="log4net" Version="2.0.8" />
     <PackageReference Include="PostSharp" Version="6.2.6" />
   </ItemGroup>
 
