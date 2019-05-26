@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="DBContext\" />
     <Folder Include="Dto\" />
   </ItemGroup>
 

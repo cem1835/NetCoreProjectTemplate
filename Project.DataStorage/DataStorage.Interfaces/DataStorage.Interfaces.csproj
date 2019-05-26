@@ -13,4 +13,8 @@
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\DataStorage.Core\DataStorage.Core.csproj" />
+  </ItemGroup>
+
 </Project>
