@@ -6,17 +6,21 @@ using System.Text;
 
 namespace DataStorage.Core.EntityFramework.PostgreSQL
 {
-    public class DatabaseContext:DbContext
+
+    //dotnet ef migrations add 'MigrationName' --context PostgreSQL_DatabaseContext --output-dir Postgresql/Migrations
+
+    public class PostgreSQL_DatabaseContext:DbContext
     {
-        public DatabaseContext()
+        public PostgreSQL_DatabaseContext()
         {
             
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //optionsBuilder.UseNpgsql("Host=127.0.0.1;Database=LawyerProjectDB;Username=cem;Password=18351835");
             optionsBuilder.UseNpgsql("Host=127.0.0.1;Port=5432;Username=cem;Password=18351835;Database=LawyerProjectDB;");
+
+             
         }
 
         public DbSet<SampleEntity> SampleEntities { get; set; }

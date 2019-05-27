@@ -3,17 +3,15 @@ using System;
 using DataStorage.Core.EntityFramework.PostgreSQL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace DataStorage.Core.Migrations
 {
-    [DbContext(typeof(DatabaseContext))]
-    [Migration("20190527185238_Initial")]
-    partial class Initial
+    [DbContext(typeof(PostgreSQL_DatabaseContext))]
+    partial class DatabaseContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

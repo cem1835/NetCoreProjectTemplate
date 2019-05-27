@@ -8,7 +8,7 @@ using System.Text;
 
 namespace DataStorage.Implementations
 {
-    public class SampleEntityDAL : EfEntityRepositoryBase<SampleEntity, DatabaseContext>, ISampleEntityDAL
+    public class SampleEntityDAL : EfEntityRepositoryBase<SampleEntity, PostgreSQL_DatabaseContext>, ISampleEntityDAL
     {
         public void TestDAL()
         {
