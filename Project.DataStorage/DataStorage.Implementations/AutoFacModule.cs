@@ -1,5 +1,6 @@
 ﻿using System;
 using Autofac;
+using DataStorage.Interfaces;
 
 namespace DataStorage.Implementations
 {
@@ -7,7 +8,7 @@ namespace DataStorage.Implementations
     {
         protected override void Load(ContainerBuilder builder)
         {
-            //builder.RegisterType<>
+            builder.RegisterType<SampleEntityDAL>().As<ISampleEntityDAL>().InstancePerLifetimeScope();
         }
     }
 }
