@@ -1,10 +1,13 @@
 ﻿using Autofac;
 using Project.ServiceBroker.Implementations;
 using Project.ServiceBroker.Interfaces;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace ServiceBroker.Implementations
 {
-
     public class AutofacModule : Module
     {
         protected override void Load(ContainerBuilder builder)
@@ -14,5 +17,4 @@ namespace ServiceBroker.Implementations
             builder.RegisterType<TestImplementation>().As<TestInterface>().InstancePerLifetimeScope();
         }
     }
-
 }
