@@ -25,4 +25,5 @@ namespace DataStorage.Core.EntityFramework.PostgreSQL
 
         public DbSet<SampleEntity> SampleEntities { get; set; }
     }
+
 }

@@ -12,7 +12,7 @@ namespace DataStorage.Implementations
     {
         public void TestDAL()
         {
-            throw new NotImplementedException();
+            
         }
     }
 }

@@ -8,20 +8,21 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="EntityFramework\MSSQL\MSSQL_DatabaseContext.cs" />
+    <Compile Remove="DatabaseConnectors\EntityFramework\MSSQL\MSSQL_DatabaseContext.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="EntityFramework\MSSQL\MSSQL_DatabaseContext.cs" />
+    <None Include="DatabaseConnectors\EntityFramework\MSSQL\MSSQL_DatabaseContext.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.2.4" />
+    <PackageReference Include="NHibernate" Version="5.2.5" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="2.2.4" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Project.Entity\Project.Entity.csproj" />
+    <ProjectReference Include="..\..\Project.Core\Project.Entity\Project.Entity.csproj" />
   </ItemGroup>
 
 </Project>

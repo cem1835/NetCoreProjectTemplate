@@ -15,7 +15,8 @@
     <PackageReference Include="Autofac" Version="4.9.2" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\DataStorage.Core\DataStorage.Core.csproj" />
+    <ProjectReference Include="..\..\Project.Core\Project.Entity\Project.Entity.csproj" />
+    <ProjectReference Include="..\DataStorage.Core\DataStorage.Core.csproj" />
     <ProjectReference Include="..\DataStorage.Interfaces\DataStorage.Interfaces.csproj" />
   </ItemGroup>
 </Project>
