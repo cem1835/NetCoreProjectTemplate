@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Folder Include="Dto\" />
+    <Folder Include="Enums\" />
   </ItemGroup>
 
   <ItemGroup>
