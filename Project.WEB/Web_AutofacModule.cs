@@ -7,7 +7,7 @@ namespace Project.WEB
 
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterAssemblyModules(System.Reflection.Assembly.LoadFrom("RefenceDLLFiles\\ServiceBroker.Implementations.dll"));
+            builder.RegisterAssemblyModules(System.Reflection.Assembly.LoadFrom("..\\RefenceDLLFiles\\ServiceBroker.Implementations.dll"));
             
         }
     }

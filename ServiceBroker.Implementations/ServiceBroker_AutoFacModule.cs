@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using DataStorage.Interfaces;
 using Project.ServiceBroker.Implementations;
 using Project.ServiceBroker.Interfaces;
 using System;
@@ -12,7 +13,7 @@ namespace ServiceBroker.Implementations
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterAssemblyModules(System.Reflection.Assembly.LoadFrom("RefenceDLLFiles\\DataStorage.Implementations.dll"));
+            builder.RegisterAssemblyModules(System.Reflection.Assembly.LoadFrom("..\\RefenceDLLFiles\\DataStorage.Implementations.dll"));
 
             builder.RegisterType<TestImplementation>().As<TestInterface>().InstancePerLifetimeScope();
         }

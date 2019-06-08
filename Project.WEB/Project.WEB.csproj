@@ -16,6 +16,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Project.Core\Project.Core.Extensions\Project.Extensions.csproj" />
     <ProjectReference Include="..\Project.ServiceBroker\ServiceBroker.Interfaces\ServiceBroker.Interfaces.csproj" />
   </ItemGroup>
 </Project>

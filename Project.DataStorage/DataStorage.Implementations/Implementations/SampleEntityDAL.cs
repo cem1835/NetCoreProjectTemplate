@@ -10,9 +10,9 @@ namespace DataStorage.Implementations
 {
     public class SampleEntityDAL : EfEntityRepositoryBase<SampleEntity, PostgreSQL_DatabaseContext>, ISampleEntityDAL
     {
-        public void TestDAL()
+        public string TestDAL()
         {
-            
+            return "Hello From DataStorage";
         }
     }
 }

@@ -5,12 +5,15 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+
   <PropertyGroup>
-  <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
   </PropertyGroup>
 
+
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>..\..\Project.WEB\bin\Debug\netcoreapp2.2\</OutputPath>
+    <OutputPath>bin\Debug\netstandard2.0\</OutputPath>
   </PropertyGroup>
+
 
 </Project>

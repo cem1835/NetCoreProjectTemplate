@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Project.WEB.Models;
 using Project.ServiceBroker.Interfaces;
+using Project.Extensions.MQ;
 
 namespace Project.WEB.Controllers
 {
@@ -20,7 +21,9 @@ namespace Project.WEB.Controllers
 
         public IActionResult Index()
         {
-
+            var message = new MessageRequest(1,"test","");
+            var res =   MqBus.CreateRequest<MessageRequest, MessageResponse>(message);
+            var test = res.Result;
             return View();
         }
 
