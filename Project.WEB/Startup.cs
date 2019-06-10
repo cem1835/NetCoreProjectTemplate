@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Autofac;
-using Project.ServiceBroker.Interfaces;
+using Project.WEB.SignalR;
 
 namespace Project.WEB
 {
@@ -38,20 +38,13 @@ namespace Project.WEB
             });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddSignalR();
         }
 
 
         public void ConfigureContainer(ContainerBuilder builder)
         {
-            // Add any Autofac modules or registrations.
-            // This is called AFTER ConfigureServices so things you
-            // register here OVERRIDE things registered in ConfigureServices.
-            //
-            // You must have the call to AddAutofac in the Program.Main
-            // method or this won't be called.
             builder.RegisterModule(new AutofacModule());
-
-
         }
 
 
@@ -78,6 +71,11 @@ namespace Project.WEB
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+            });
+
+            app.UseSignalR(routes =>
+            {
+                routes.MapHub<ChatHub>("/chatHub");
             });
         }
     }
