@@ -10,7 +10,9 @@ namespace Project.WEB.SignalR
     {
         public async Task SendMessage(string user,string message)
         {
-            await Clients.All.SendAsync("Test Message", user, message);
+            await Clients.All.SendAsync("MessagingTest", user, message);
+            
+            
         }
     }
 }
