@@ -21,9 +21,9 @@ namespace Project.WEB.Controllers
 
         public IActionResult Index()
         {
-            //var message = new MessageRequest(1,"test","");
-            //var res =   MqBus.CreateRequest<MessageRequest, MessageResponse>(message);
-            //var test = res.Result;
+            var message = new MessageRequest(1, "test", "");
+            var res = MqBus.CreateRequest<MessageRequest, MessageResponse>(message);
+            var test = res.Result;
             return View();
         }
 

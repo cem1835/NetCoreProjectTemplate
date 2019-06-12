@@ -11,6 +11,8 @@ namespace ServiceBroker.Implementations.Consumers
     {
         public async Task Consume(ConsumeContext<MessageRequest> context)
         {
+            //... //......
+
             context.Respond(new MessageResponse(200, "test", "test"));
         }
     }
