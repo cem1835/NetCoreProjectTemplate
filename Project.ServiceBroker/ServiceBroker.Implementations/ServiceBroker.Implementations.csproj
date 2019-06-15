@@ -18,19 +18,15 @@
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
+    <PackageReference Include="Serilog" Version="2.8.0" />
+    <PackageReference Include="Serilog.Enrichers.AspnetcoreHttpcontext" Version="1.1.0" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Project.Core\Project.Core.Extensions\Project.Extensions.csproj" />
-    <ProjectReference Include="..\Project.DataStorage\DataStorage.Interfaces\DataStorage.Interfaces.csproj" />
-    <ProjectReference Include="..\Project.ServiceBroker\ServiceBroker.Interfaces\ServiceBroker.Interfaces.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="ServiceBroker.Interfaces">
-      <HintPath>..\RefenceDLLFiles_ServiceBroker\ServiceBroker.Interfaces.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\..\Project.Core\Project.Core.Extensions\Project.Extensions.csproj" />
+    <ProjectReference Include="..\..\Project.DataStorage\DataStorage.Interfaces\DataStorage.Interfaces.csproj" />
+    <ProjectReference Include="..\..\Project.ServiceBroker\ServiceBroker.Interfaces\ServiceBroker.Interfaces.csproj" />
   </ItemGroup>
 
 </Project>

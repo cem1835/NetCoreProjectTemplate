@@ -13,6 +13,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using ServiceBroker.Implementations.Middleware;
+using Serilog;
+using Serilog.Enrichers.AspnetcoreHttpcontext;
+using Project.Extensions.Log.SeriLog;
 
 namespace ServiceBroker.Implementations
 {
@@ -21,6 +24,7 @@ namespace ServiceBroker.Implementations
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+
         }
 
         public IConfiguration Configuration { get; }
@@ -29,22 +33,13 @@ namespace ServiceBroker.Implementations
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-
             services.AddMassTransit();
             services.AddAutofac();
         }
 
         public void ConfigureContainer(ContainerBuilder builder)
-        {
-            // Add any Autofac modules or registrations.
-            // This is called AFTER ConfigureServices so things you
-            // register here OVERRIDE things registered in ConfigureServices.
-            //
-            // You must have the call to AddAutofac in the Program.Main
-            // method or this won't be called.
+        { 
             builder.RegisterModule(new AutofacModule());
-
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
