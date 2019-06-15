@@ -1,0 +1,65 @@
+﻿@{
+    ViewData["Title"] = "SignalRChat";
+}
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/lib/signalr/dist/browser/signalr.js"></script>
+
+
+<div class="container">
+    <div class="row">&nbsp;</div>
+    <div class="row">
+        <div class="col-6">&nbsp;</div>
+        <div class="col-6">
+            User..........<input type="text" id="userInput" />
+            <br />
+            Message...<input type="text" id="messageInput" />
+            <input type="button" id="sendButton" value="Send Message" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <hr />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">&nbsp;</div>
+        <div class="col-6">
+            <ul id="messagesList"></ul>
+        </div>
+    </div>
+</div>
+
+<script>
+// SignalR
+
+    var connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
+
+
+    connection.on("MessagingTest", function (user, message) {
+       let msg = message.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+       let encodedMsg = user + " says " + msg;
+    
+       $("#messagesList").append(`<li> ${encodedMsg} </li>`);
+      });
+
+
+     $("#sendButton").attr("disabled","disabled");
+
+     connection.start().then(function(){
+         $("#sendButton").removeAttr("disabled")
+     }).catch(function (err) {
+         return console.error(err.toString());
+     });
+     
+     
+     $("#sendButton").click(function(ev){
+     let user=$("#userInput").val();
+     let message=$("#messageInput").val();
+    
+     connection.invoke("SendMessage", user, message).catch(function (err) {
+         return console.error(err.toString());
+     });
+     ev.preventDefault();
+    });
+
+</script>
