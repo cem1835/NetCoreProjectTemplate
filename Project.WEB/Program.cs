@@ -9,7 +9,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Autofac.Extensions.DependencyInjection;
 
-
 namespace Project.WEB
 {
     public class Program

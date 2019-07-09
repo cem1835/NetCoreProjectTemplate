@@ -12,10 +12,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using ServiceBroker.Implementations.Middleware;
+using Security.Implementations.AuthenticationMiddleware;
 using Serilog;
 using Serilog.Enrichers.AspnetcoreHttpcontext;
-using Project.Extensions.Log.SeriLog;
 
 namespace ServiceBroker.Implementations
 {
@@ -34,11 +33,10 @@ namespace ServiceBroker.Implementations
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddMassTransit();
-            services.AddAutofac();
         }
 
         public void ConfigureContainer(ContainerBuilder builder)
-        { 
+        {
             builder.RegisterModule(new AutofacModule());
         }
 
@@ -54,7 +52,7 @@ namespace ServiceBroker.Implementations
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-            app.UseMiddleware<AuthenticationMiddleware>();
+            app.UseMiddleware<AuthMiddleware>();
             app.UseHttpsRedirection();
             app.UseMvc();
         }

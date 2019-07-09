@@ -13,9 +13,9 @@ namespace ServiceBroker.Implementations
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterAssemblyModules(System.Reflection.Assembly.LoadFrom("..\\RefenceDLLFiles\\DataStorage.Implementations.dll"));
+            //builder.RegisterAssemblyModules(System.Reflection.Assembly.LoadFrom("..\\RefenceDLLFiles\\DataStorage.Implementations.dll"));
 
-            builder.RegisterType<TestImplementation>().As<TestInterface>().InstancePerLifetimeScope();
+            //builder.RegisterType<TestImplementation>().As<TestInterface>().InstancePerLifetimeScope();
         }
     }
 }
